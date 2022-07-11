@@ -1,0 +1,120 @@
+{
+  "files.associations": {
+    "**/ci/templates/*.yml": "azure-pipelines",
+    "api/**/*.html": "html",
+    "api/**/templates/**/*.html": "django-html",
+    "api/**/templates/**/*": "django-txt",
+    "api/**/requirements{/**,*}.{txt,in}": "pip-requirements",
+    "tf/**/*.tf*": "terraform"
+  },
+  "python.defaultInterpreterPath": "${workspaceFolder}/api/.venv/bin/python3",
+  "python.languageServer": "Pylance",
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": [
+    "--line-length",
+    "120",
+    "--fast"
+  ],
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": false,
+  "python.linting.pylintArgs": [
+    "--rcfile",
+    "${workspaceFolder}/api/.pylintrc"
+  ],
+  "python.sortImports.args": [
+    "--profile=black"
+  ],
+  "python.autoComplete.extraPaths": [
+    "${workspaceFolder}/api/betablocks"
+  ],
+  "python.testing.pytestArgs": [
+    "${workspaceFolder}/api/betablocks",
+    "-n",
+    "auto",
+    "--no-testmon"
+  ],
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/api/betablocks"
+  ],
+  "prettier.useEditorConfig": true,
+  "eslint.lintTask.enable": true,
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "typescript.check.npmIsInstalled": true,
+  "typescript.preferences.importModuleSpecifier": "shortest",
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+      120
+    ]
+  },
+  "[javascript]": {
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": [
+      "source.fixAll",
+      "source.organizeImports"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": [
+      "source.fixAll",
+      "source.organizeImports"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": [
+      "source.fixAll",
+      "source.organizeImports"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": [
+      "source.fixAll",
+      "source.organizeImports"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": [
+      "source.fixAll"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[terraform]": {
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": [
+      "source.fixAll"
+    ]
+  },
+  "emmet.excludeLanguages": [
+    "markdown",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "python"
+  ],
+  "typescript.tsdk": "./node_modules/typescript/lib"
+}

@@ -1,0 +1,12 @@
+# dependencies
+**/node_modules
+
+# misc
+.DS_Store
+*.pem
+
+# local env files
+.env
+
+# sql dumps
+*.sql
