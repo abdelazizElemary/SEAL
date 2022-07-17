@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'backend'
+    'backend',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -130,5 +131,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Media Files
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_PATH = "/media/"
+MEDIA_URL = "http://localhost:8000/media/"
 
 DATA_UPLOAD_MAX_MEMORY_SIZE = 100 * 1024 * 1024  # 10 MiB

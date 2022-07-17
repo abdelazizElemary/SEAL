@@ -3,7 +3,7 @@ from pyexpat import model
 
 
 # Create your models here.
-class Documnent(models.Model):
+class Document(models.Model):
     file = models.FileField(upload_to="documents/")
 
     def __str__(self):
