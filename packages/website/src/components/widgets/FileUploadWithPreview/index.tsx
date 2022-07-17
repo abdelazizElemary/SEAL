@@ -43,9 +43,9 @@ const FileUploadWithPreview: React.FC<Props> = ({ files, setFiles }) => {
         Array.from(files).map((file, index) => {
           if (!file.type.includes('image')) {
             return (
-              <div className="flex flex-row items-start justify-around w-full">
+              <div key={index} className="flex flex-row items-start justify-around w-full">
                 <InsertDriveFileIcon style={{ width: '100px', height: '100px' }} />
-                <div className="flex flex-col text-center" key={index}>
+                <div className="flex flex-col text-center">
                   <Viewer fileUrl={urls[index]} />
                   {file.name}
                 </div>
@@ -53,9 +53,12 @@ const FileUploadWithPreview: React.FC<Props> = ({ files, setFiles }) => {
             )
           } else {
             return (
-              <div className="flex flex-row content-center items-center justify-around w-full">
+              <div
+                key={index}
+                className="flex flex-row content-center items-center justify-around w-full"
+              >
                 <ImageIcon style={{ width: '100px', height: '100px' }} />
-                <div className="flex flex-col w-1/2 text-center" key={index}>
+                <div className="flex flex-col w-1/2 text-center">
                   <Image
                     src={URL.createObjectURL(file)}
                     alt="image"

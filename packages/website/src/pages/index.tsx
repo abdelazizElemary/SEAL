@@ -1,8 +1,28 @@
-import type { NextPage } from "next";
-import MainPage from "../components/pages/MainPage";
+import axios from 'axios'
+import type { GetServerSideProps, NextPage } from 'next'
+import MainPage from '../components/pages/MainPage'
 
-const Home: NextPage = () => {
-  return <MainPage />
-};
+export interface ModifiedFile {
+  id: number
+  file: string
+}
 
-export default Home;
+type Props = {
+  docs: ModifiedFile[]
+}
+
+const Home: NextPage<Props> = ({ docs }) => {
+  return <MainPage docs={docs} />
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const docs = await axios.get('http://localhost:8000/api/v1/files/')
+
+  return {
+    props: {
+      docs: docs.data as ModifiedFile[],
+    },
+  }
+}
+
+export default Home
