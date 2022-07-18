@@ -38,6 +38,19 @@ python-versions = ">=3.7"
 Django = ">=3.2"
 
 [[package]]
+name = "django-environ"
+version = "0.9.0"
+description = "A package that allows you to utilize 12factor inspired environment variables to configure your Django application."
+category = "main"
+optional = false
+python-versions = ">=3.4,<4"
+
+[package.extras]
+develop = ["coverage[toml] (>=5.0a4)", "pytest (>=4.6.11)", "furo (>=2021.8.17b43,<2021.9.0)", "sphinx (>=3.5.0)", "sphinx-notfound-page"]
+docs = ["furo (>=2021.8.17b43,<2021.9.0)", "sphinx (>=3.5.0)", "sphinx-notfound-page"]
+testing = ["coverage[toml] (>=5.0a4)", "pytest (>=4.6.11)"]
+
+[[package]]
 name = "djangorestframework"
 version = "3.13.1"
 description = "Web APIs for Django, made easy."
@@ -91,7 +104,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "0e1fbf19fad425bbfc3b612ee5ab39fbffc2772bfe56f19dc65d1d0a372845a6"
+content-hash = "2a985f1b7bad40466fcbec73c4ae9097ceb280c816cc06118788b94723b8706c"
 
 [metadata.files]
 asgiref = [
@@ -100,6 +113,7 @@ asgiref = [
 ]
 django = []
 django-cors-headers = []
+django-environ = []
 djangorestframework = [
     {file = "djangorestframework-3.13.1-py3-none-any.whl", hash = "sha256:24c4bf58ed7e85d1fe4ba250ab2da926d263cd57d64b03e8dcef0ac683f8b1aa"},
     {file = "djangorestframework-3.13.1.tar.gz", hash = "sha256:0c33407ce23acc68eca2a6e46424b008c9c02eceb8cf18581921d0092bc1f2ee"},
