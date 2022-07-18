@@ -1,6 +1,8 @@
 import DownloadForOfflineRoundedIcon from '@mui/icons-material/DownloadForOfflineRounded'
+import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined'
 import axios from 'axios'
 import { useState } from 'react'
+import { toast, ToastContainer } from 'react-toastify'
 import { ModifiedFile } from '../../../pages'
 import PageLayout from '../../layouts/PageLayout'
 import FileUploadWithPreview from '../../widgets/FileUploadWithPreview'
@@ -25,8 +27,23 @@ const MainPage: React.FC<Props> = ({ docs }) => {
     setFiles(null)
   }
 
+  const handleShare = (url: string): void => {
+    navigator.clipboard.writeText(url)
+    toast('link copied to clipboard to share!')
+  }
   return (
     <PageLayout>
+      <ToastContainer
+        className="w-1/4 flex flex-col text-center self-center justify-center content-center"
+        toastClassName="rounded-md shadow-md active:scale-90 active:transform transition-all capitalize bg-green-300 text-black border-b border-b-8 border-b-white"
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        draggable
+        closeButton={false}
+      />
       <div className="flex flex-col items-center gap-10">
         <div className="flex flex-col content-start items-start w-full p-4">
           <p className="text-black text-2xl mb-2">- Stored files</p>
@@ -48,6 +65,13 @@ const MainPage: React.FC<Props> = ({ docs }) => {
                   download
                   <DownloadForOfflineRoundedIcon />
                 </a>
+                <span
+                  onClick={() => handleShare(file.file)}
+                  className="hover:text-black active:scale-90 active:transform transition-all capitalize flex flex-row items-center cursor-pointer"
+                >
+                  share
+                  <ShareOutlinedIcon />
+                </span>
               </div>
             )
           })}

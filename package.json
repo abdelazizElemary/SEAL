@@ -24,7 +24,8 @@
     "next-unused": "^0.0.6",
     "pdfjs-dist": "^2.14.305",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-toastify": "^9.0.6"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
