@@ -31,6 +31,8 @@ const MainPage: React.FC<Props> = ({ docs }) => {
     navigator.clipboard.writeText(url)
     toast('link copied to clipboard to share!')
   }
+
+  const htmlContent = '<a href="www.google.com" style="color:red;">here it is</a>'
   return (
     <PageLayout>
       <ToastContainer
@@ -86,6 +88,7 @@ const MainPage: React.FC<Props> = ({ docs }) => {
         >
           submit
         </button>
+        <div dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
       </div>
     </PageLayout>
   )
